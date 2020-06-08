@@ -5,6 +5,7 @@ This is the capstone project for the Cloud DevOps Nanodegre Program, and contain
 CI/CD pipeline for a simple website with AWS EKS (rolling deployment) and infrastructure as code.
 
 ## Tools
+* Jenkins Pipeline
 * AWS Cli for Jenkins
 * AWS Credentials for Jenkins
 * Blue Ocean for Jenkins
