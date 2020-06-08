@@ -1,0 +1,22 @@
+Parameters:
+    EnvironmentName:
+      Description: Enviroment Name
+      Type: String
+  
+Resources:
+    myCluster:
+        Type: 'AWS::EKS::Cluster'
+        Properties:
+          Name: prod
+          Version: '1.14'
+          RoleArn: arn:aws:iam::596282074982:role/EKS
+          ResourcesVpcConfig:
+            SecurityGroupIds:
+              - Fn::ImportValue:
+                !Sub "${EnvironmentName}-SG"
+            SubnetIds:
+              Fn::Split:
+                - ","
+                - Fn::ImportValue:
+                      Fn::Sub: ${EnvironmentName}-PRIV-NETS
+
