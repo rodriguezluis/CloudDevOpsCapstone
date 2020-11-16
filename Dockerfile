@@ -1,5 +1,6 @@
 FROM nginx
-## Step 1:
+## Step 1: 
+
 # Delete the default webpage
 RUN rm /usr/share/nginx/html/index.html
 ## Step 2:
